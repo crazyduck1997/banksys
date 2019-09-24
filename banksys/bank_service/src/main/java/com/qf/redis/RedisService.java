@@ -22,7 +22,6 @@ public class RedisService {
 
 
     //从redis中获取余额
-    //测试
     public Double getBanlance(String key,String cardId){
         Jedis jedis = jedisPool.getResource();
         Double money = null;
