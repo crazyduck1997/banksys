@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form>
+        账号:<input type="text" name="descCardId"><br>
+        金额:<input type="text" name="money"><br>
+        <input type="submit" value="转账"><br>
+    </form>
+
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+    $("form").submit(function () {
+        $.ajax({
+            type:"post",
+            url:"transfer.do",
+            data:$("form").serialize(),
+            success:function (data) {
+                alert(data.info)
+            }
+        })
+        return false;
+    })
+
+</script>
+</html>

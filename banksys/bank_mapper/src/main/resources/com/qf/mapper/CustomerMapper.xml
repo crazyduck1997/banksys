@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.mapper.CustomerMapper">
+
+    <select id="findByCardId" resultType="com.qf.entity.Customer">
+        select * from customer where cardId=#{cardId}
+    </select>
+
+    <update id="update" parameterType="com.qf.entity.Customer">
+        update customer set id = #{id}
+        <if test="balance != null">
+            ,balance =  #{balance}
+        </if>
+        <if test="password != null">
+            ,password = #{password}
+        </if>
+        where id = #{id}
+    </update>
+
+
+</mapper>

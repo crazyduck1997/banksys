@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!--<settings>
+        &lt;!&ndash; 下划线转驼峰命名 &ndash;&gt;
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>-->
+
+   <!--  设置别名
+    <typeAliases>
+        <typeAlias type="com.qfedu.entity.User" alias="user"></typeAlias>
+        &lt;!&ndash;<typeAlias type="com.qfedu.entity.Trade" alias="trade"></typeAlias>&ndash;&gt;
+    </typeAliases>-->
+
+    <plugins>
+        <!-- com.github.pagehelper为PageHelper类所在包名 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!-- 设置数据库的方言 -->
+            <property name="helperDialect" value="mysql"/>
+        </plugin>
+    </plugins>
+
+
+</configuration>

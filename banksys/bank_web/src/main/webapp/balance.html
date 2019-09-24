@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询余额</title>
+</head>
+<body>
+
+余额:<br/>
+人民币:<span></span>
+
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $.ajax({
+            type:"get",
+            url:"balance.do",
+            dataType:"json",
+            success:function (data) {
+                if (data.code == 0){
+                    $("span").html(data.info)
+                }else {
+                    alert(data.info)
+                }
+            }
+        })
+    })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+[{
+	"pname":"menu1",
+	"cmenu":[{
+		"cname":"cmenu1",
+		"url":"aaa.html"
+	},{
+		"cname":"cmenu2",
+		"url":"bbb.html"
+	},{
+		"cname":"cmenu3",
+		"url":"ccc.html"
+	}]
+},{
+	"pname":"menu2",
+	"cmenu":[{
+		"cname":"cmenu1",
+		"url":"aaa.html"
+	},{
+		"cname":"cmenu2",
+		"url":"bbb.html"
+	},{
+		"cname":"cmenu3",
+		"url":"ccc.html"
+	}]
+},{
+	"pname":"menu3",
+	"cmenu":[{
+		"cname":"cmenu1",
+		"url":"aaa.html"
+	},{
+		"cname":"cmenu2",
+		"url":"bbb.html"
+	},{
+		"cname":"cmenu3",
+		"url":"ccc.html"
+	}]
+}]

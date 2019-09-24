@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<body>
+
+<div class="layui-form">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">开始时间</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="beginTime" placeholder="yyyy-MM-dd">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">结束时间</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="endTime" placeholder="yyyy-MM-dd">
+            </div>
+            <button type="button" class="layui-btn layui-btn-radius">提交</button>
+        </div>
+    </div>
+</div>
+
+<table class="layui-hide" id="demo" lay-filter="test"></table>
+
+<script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="layui/layui.js"></script>
+<script>
+    layui.use(['laydate', 'table'], function () {
+        var laydate = layui.laydate;
+        var table = layui.table;
+
+        //常规用法
+        laydate.render({
+            elem: '#beginTime'
+        });
+        laydate.render({
+            elem: '#endTime'
+        });
+        //执行一个 table 实例
+        table.render({
+            elem: '#demo'
+            , height: 420
+            , url: 'transferInfo.do' //数据接口
+            , title: '用户表'
+            , page: true //开启分页
+            , cols: [[ //表头
+
+                {field: 'createTime', title: '创建日期', width: 80, sort: true, fixed: 'left'}
+                , {field: 'income', title: '收入', width: 80}
+                , {field: 'output', title: '支出', width: 80, sort: true}
+                , {field: 'balance', title: '余额', width: 80, sort: true}
+            ]]
+        });
+    })
+</script>
+
+
+</body>
+</html>
